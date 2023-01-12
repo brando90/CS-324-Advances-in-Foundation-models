@@ -30,6 +30,10 @@ Copypaste summary:
   - they did longer contexts & that reduced perplexity
   - But the memory-efficiency allows us to learn over longer contexts (the time-efficiency also makes training over these long sequences practical, e.g., don't need to wait around for many days)
 
+- 2 sentence summary
+  - We chop up attention into smaller blocks that fit in SRAM so that all operations can be calculated in the SRAM at once without moving it in and out of SRAM-HBM
+  - This uses less memory bandwidth & faster, which allows longer contexts & better performance
+
 # Question
 
 Q1: The abstract of the current speakers starts by saying that self-attention takes quadratic workload. 
