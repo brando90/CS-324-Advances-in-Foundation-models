@@ -8,6 +8,16 @@ This work received the Best Paper Award at the Hardware-Aware Efficient Training
 
 Paper: https://arxiv.org/abs/2205.14135
 
+My summary of the absract:
+
+FMs summary:
+todo
+
+Copypaste summary:
+- We argue that a missing principle is making attention algorithms IO-aware -- accounting for reads and writes between levels of GPU memory. We propose FlashAttention, an IO-aware exact attention algorithm that uses tiling to reduce the number of memory reads/writes between GPU high bandwidth memory (HBM) and GPU on-chip SRAM.
+- We also extend FlashAttention to block-sparse attention, yielding an approximate attention algorithm that is faster than any existing approximate attention method.
+- FlashAttention and block-sparse FlashAttention enable longer context in Transformers, yielding higher quality models (0.7 better perplexity on GPT-2 and 6.4 points of lift on long-document classification) and entirely new capabilities
+
 ## Notes
 
 - main points:
@@ -16,9 +26,33 @@ Paper: https://arxiv.org/abs/2205.14135
   - gist of main idea/technique:
   - cool conclusion/results: 
 
+- misc info:
+  - they did longer contexts & that reduced perplexity
+  - But the memory-efficiency allows us to learn over longer contexts (the time-efficiency also makes training over these long sequences practical, e.g., don't need to wait around for many days)
+
 # Question
 
 Q1: The abstract of the current speakers starts by saying that self-attention takes quadratic workload. 
 To my understanding of what I've been told is that this might not actually be true. Reference https://arxiv.org/abs/2112.05682 
 paper title is Self-attention Does Not Need O(n2) Memory, may this be clarified and it's relation to the speakers work? Thanks in advance!
-A: 
+A1: Seems that flash attention uses the trick from that paper. Just somehow don't materialize the entire matrix and do
+the compute. Something to do with block size etc. 
+
+Q2: does flash attention affect only forward pass?
+A2: Both. The blocking is applied on both passes, while the recomputation is only used in the backward pass to 
+calculated the gradient
+
+Q3: How compatible is using an alternative matrix multiplication algorithm, such as those identified by AlphaTensor, with FlashAttention? https://www.nature.com/articles/s41586-022-05172-4#author-information
+A3: 
+
+Q4: FlashAttention, what is a block-size? Why does it matter for speed ups.
+A4: 
+
+Q5: what is "wall-clock speedup"?
+A5: 
+
+Q6: what is tiling?
+A6:
+
+Q7: what is a one or two sentence summary of the main technique that leads to all these awesome benefits?
+A7: 
