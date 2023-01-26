@@ -17,11 +17,9 @@ FMs summary:
 
 Copypaste summary:
 
-- main points:
-  - 
+Main contributions:
 
 refs:
-
 
 ## Notes
 
