@@ -1,6 +1,8 @@
 # Lec 
 
 attendance: https://forms.gle/Qow74t8tK4UbMyqV8
+webpage: https://stanford-cs324.github.io/winter2023/
+canvas: https://canvas.stanford.edu/courses/169201
 
 ## Summary
 - 2 sentence summary
