@@ -35,7 +35,7 @@ refs:
   - cure diseases by targeting rna
   - rna is less known than protein
   - AI helps to guide experiments and experiments help to refine AI
-  - 
+  -  https://raphael.tc.com/
 
 # Question
 
@@ -60,7 +60,7 @@ the reason handcrafting has not worked is the following: these things are very c
 inductive bias into the model but that has a very unexpected cascade of effects that leads to a large limitation in
 the models ability to learn. But if it would have learned it on it's own it would have lead to a similar inductive bias
 without any of those negative unexpected limitations. Similar to the "butterfly effect" in physics. So perhaps we should
-we should let the data speak for itself?
+let the data speak for itself?
 
 
 Thank you for your time! I really appreciate it! If your ever at Stanford would love to say hi in person!
